@@ -1,0 +1,467 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		572E13A314B5AEB80003F9F7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572E13A214B5AEB80003F9F7 /* Cocoa.framework */; };
+		572E13AD14B5AEB80003F9F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 572E13AB14B5AEB80003F9F7 /* InfoPlist.strings */; };
+		572E13AF14B5AEB80003F9F7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E13AE14B5AEB80003F9F7 /* main.m */; };
+		572E13B314B5AEB80003F9F7 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 572E13B114B5AEB80003F9F7 /* Credits.rtf */; };
+		572E13B614B5AEB80003F9F7 /* MWAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E13B514B5AEB80003F9F7 /* MWAppDelegate.m */; };
+		572E13B914B5AEB80003F9F7 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 572E13B714B5AEB80003F9F7 /* MainMenu.xib */; };
+		572E13BC14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 572E13BA14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodeld */; };
+		572E13C414B5AEB80003F9F7 /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572E13C314B5AEB80003F9F7 /* SenTestingKit.framework */; };
+		572E13C514B5AEB80003F9F7 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 572E13A214B5AEB80003F9F7 /* Cocoa.framework */; };
+		572E13CD14B5AEB80003F9F7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 572E13CB14B5AEB80003F9F7 /* InfoPlist.strings */; };
+		572E13D014B5AEB80003F9F7 /* WikiaFetcherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 572E13CF14B5AEB80003F9F7 /* WikiaFetcherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		572E13C614B5AEB80003F9F7 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 572E139514B5AEB80003F9F7 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 572E139D14B5AEB80003F9F7;
+			remoteInfo = WikiaFetcher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		572E139E14B5AEB80003F9F7 /* WikiaFetcher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WikiaFetcher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		572E13A214B5AEB80003F9F7 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		572E13A514B5AEB80003F9F7 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		572E13A614B5AEB80003F9F7 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		572E13A714B5AEB80003F9F7 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		572E13AA14B5AEB80003F9F7 /* WikiaFetcher-Info.plist */ = {isa = PBXFileReference; path = "WikiaFetcher-Info.plist"; sourceTree = "<group>"; };
+		572E13AC14B5AEB80003F9F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		572E13AE14B5AEB80003F9F7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		572E13B014B5AEB80003F9F7 /* WikiaFetcher-Prefix.pch */ = {isa = PBXFileReference; path = "WikiaFetcher-Prefix.pch"; sourceTree = "<group>"; };
+		572E13B214B5AEB80003F9F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		572E13B414B5AEB80003F9F7 /* MWAppDelegate.h */ = {isa = PBXFileReference; path = MWAppDelegate.h; sourceTree = "<group>"; };
+		572E13B514B5AEB80003F9F7 /* MWAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MWAppDelegate.m; sourceTree = "<group>"; };
+		572E13B814B5AEB80003F9F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		572E13BB14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WikiaFetcher.xcdatamodel; sourceTree = "<group>"; };
+		572E13C214B5AEB80003F9F7 /* WikiaFetcherTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WikiaFetcherTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		572E13C314B5AEB80003F9F7 /* SenTestingKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SenTestingKit.framework; path = Library/Frameworks/SenTestingKit.framework; sourceTree = DEVELOPER_DIR; };
+		572E13CA14B5AEB80003F9F7 /* WikiaFetcherTests-Info.plist */ = {isa = PBXFileReference; path = "WikiaFetcherTests-Info.plist"; sourceTree = "<group>"; };
+		572E13CC14B5AEB80003F9F7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		572E13CE14B5AEB80003F9F7 /* WikiaFetcherTests.h */ = {isa = PBXFileReference; path = WikiaFetcherTests.h; sourceTree = "<group>"; };
+		572E13CF14B5AEB80003F9F7 /* WikiaFetcherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WikiaFetcherTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		572E139B14B5AEB80003F9F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572E13A314B5AEB80003F9F7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572E13BE14B5AEB80003F9F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572E13C414B5AEB80003F9F7 /* SenTestingKit.framework in Frameworks */,
+				572E13C514B5AEB80003F9F7 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		572E139314B5AEB80003F9F7 = {
+			isa = PBXGroup;
+			children = (
+				572E13A814B5AEB80003F9F7 /* WikiaFetcher */,
+				572E13C814B5AEB80003F9F7 /* WikiaFetcherTests */,
+				572E13A114B5AEB80003F9F7 /* Frameworks */,
+				572E139F14B5AEB80003F9F7 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		572E139F14B5AEB80003F9F7 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				572E139E14B5AEB80003F9F7 /* WikiaFetcher.app */,
+				572E13C214B5AEB80003F9F7 /* WikiaFetcherTests.octest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		572E13A114B5AEB80003F9F7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				572E13A214B5AEB80003F9F7 /* Cocoa.framework */,
+				572E13C314B5AEB80003F9F7 /* SenTestingKit.framework */,
+				572E13A414B5AEB80003F9F7 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		572E13A414B5AEB80003F9F7 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				572E13A514B5AEB80003F9F7 /* AppKit.framework */,
+				572E13A614B5AEB80003F9F7 /* CoreData.framework */,
+				572E13A714B5AEB80003F9F7 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		572E13A814B5AEB80003F9F7 /* WikiaFetcher */ = {
+			isa = PBXGroup;
+			children = (
+				572E13B414B5AEB80003F9F7 /* MWAppDelegate.h */,
+				572E13B514B5AEB80003F9F7 /* MWAppDelegate.m */,
+				572E13B714B5AEB80003F9F7 /* MainMenu.xib */,
+				572E13BA14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodeld */,
+				572E13A914B5AEB80003F9F7 /* Supporting Files */,
+			);
+			path = WikiaFetcher;
+			sourceTree = "<group>";
+		};
+		572E13A914B5AEB80003F9F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				572E13AA14B5AEB80003F9F7 /* WikiaFetcher-Info.plist */,
+				572E13AB14B5AEB80003F9F7 /* InfoPlist.strings */,
+				572E13AE14B5AEB80003F9F7 /* main.m */,
+				572E13B014B5AEB80003F9F7 /* WikiaFetcher-Prefix.pch */,
+				572E13B114B5AEB80003F9F7 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		572E13C814B5AEB80003F9F7 /* WikiaFetcherTests */ = {
+			isa = PBXGroup;
+			children = (
+				572E13CE14B5AEB80003F9F7 /* WikiaFetcherTests.h */,
+				572E13CF14B5AEB80003F9F7 /* WikiaFetcherTests.m */,
+				572E13C914B5AEB80003F9F7 /* Supporting Files */,
+			);
+			path = WikiaFetcherTests;
+			sourceTree = "<group>";
+		};
+		572E13C914B5AEB80003F9F7 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				572E13CA14B5AEB80003F9F7 /* WikiaFetcherTests-Info.plist */,
+				572E13CB14B5AEB80003F9F7 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		572E139D14B5AEB80003F9F7 /* WikiaFetcher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 572E13D314B5AEB80003F9F7 /* Build configuration list for PBXNativeTarget "WikiaFetcher" */;
+			buildPhases = (
+				572E139A14B5AEB80003F9F7 /* Sources */,
+				572E139B14B5AEB80003F9F7 /* Frameworks */,
+				572E139C14B5AEB80003F9F7 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WikiaFetcher;
+			productName = WikiaFetcher;
+			productReference = 572E139E14B5AEB80003F9F7 /* WikiaFetcher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		572E13C114B5AEB80003F9F7 /* WikiaFetcherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 572E13D614B5AEB80003F9F7 /* Build configuration list for PBXNativeTarget "WikiaFetcherTests" */;
+			buildPhases = (
+				572E13BD14B5AEB80003F9F7 /* Sources */,
+				572E13BE14B5AEB80003F9F7 /* Frameworks */,
+				572E13BF14B5AEB80003F9F7 /* Resources */,
+				572E13C014B5AEB80003F9F7 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				572E13C714B5AEB80003F9F7 /* PBXTargetDependency */,
+			);
+			name = WikiaFetcherTests;
+			productName = WikiaFetcherTests;
+			productReference = 572E13C214B5AEB80003F9F7 /* WikiaFetcherTests.octest */;
+			productType = "com.apple.product-type.bundle";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		572E139514B5AEB80003F9F7 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0420;
+			};
+			buildConfigurationList = 572E139814B5AEB80003F9F7 /* Build configuration list for PBXProject "WikiaFetcher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 572E139314B5AEB80003F9F7;
+			productRefGroup = 572E139F14B5AEB80003F9F7 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				572E139D14B5AEB80003F9F7 /* WikiaFetcher */,
+				572E13C114B5AEB80003F9F7 /* WikiaFetcherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		572E139C14B5AEB80003F9F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572E13AD14B5AEB80003F9F7 /* InfoPlist.strings in Resources */,
+				572E13B314B5AEB80003F9F7 /* Credits.rtf in Resources */,
+				572E13B914B5AEB80003F9F7 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572E13BF14B5AEB80003F9F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572E13CD14B5AEB80003F9F7 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		572E13C014B5AEB80003F9F7 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		572E139A14B5AEB80003F9F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572E13AF14B5AEB80003F9F7 /* main.m in Sources */,
+				572E13B614B5AEB80003F9F7 /* MWAppDelegate.m in Sources */,
+				572E13BC14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		572E13BD14B5AEB80003F9F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				572E13D014B5AEB80003F9F7 /* WikiaFetcherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		572E13C714B5AEB80003F9F7 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 572E139D14B5AEB80003F9F7 /* WikiaFetcher */;
+			targetProxy = 572E13C614B5AEB80003F9F7 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		572E13AB14B5AEB80003F9F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				572E13AC14B5AEB80003F9F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		572E13B114B5AEB80003F9F7 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				572E13B214B5AEB80003F9F7 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		572E13B714B5AEB80003F9F7 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				572E13B814B5AEB80003F9F7 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		572E13CB14B5AEB80003F9F7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				572E13CC14B5AEB80003F9F7 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		572E13D114B5AEB80003F9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		572E13D214B5AEB80003F9F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		572E13D414B5AEB80003F9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiaFetcher/WikiaFetcher-Prefix.pch";
+				INFOPLIST_FILE = "WikiaFetcher/WikiaFetcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		572E13D514B5AEB80003F9F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiaFetcher/WikiaFetcher-Prefix.pch";
+				INFOPLIST_FILE = "WikiaFetcher/WikiaFetcher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		572E13D714B5AEB80003F9F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WikiaFetcher.app/Contents/MacOS/WikiaFetcher";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiaFetcher/WikiaFetcher-Prefix.pch";
+				INFOPLIST_FILE = "WikiaFetcherTests/WikiaFetcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		572E13D814B5AEB80003F9F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WikiaFetcher.app/Contents/MacOS/WikiaFetcher";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "WikiaFetcher/WikiaFetcher-Prefix.pch";
+				INFOPLIST_FILE = "WikiaFetcherTests/WikiaFetcherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		572E139814B5AEB80003F9F7 /* Build configuration list for PBXProject "WikiaFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				572E13D114B5AEB80003F9F7 /* Debug */,
+				572E13D214B5AEB80003F9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		572E13D314B5AEB80003F9F7 /* Build configuration list for PBXNativeTarget "WikiaFetcher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				572E13D414B5AEB80003F9F7 /* Debug */,
+				572E13D514B5AEB80003F9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		572E13D614B5AEB80003F9F7 /* Build configuration list for PBXNativeTarget "WikiaFetcherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				572E13D714B5AEB80003F9F7 /* Debug */,
+				572E13D814B5AEB80003F9F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		572E13BA14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				572E13BB14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodel */,
+			);
+			currentVersion = 572E13BB14B5AEB80003F9F7 /* WikiaFetcher.xcdatamodel */;
+			path = WikiaFetcher.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 572E139514B5AEB80003F9F7 /* Project object */;
+}
