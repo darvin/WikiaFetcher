@@ -1,0 +1,9 @@
+[submodule "libs/AFNetworking"]
+	path = libs/AFNetworking
+	url = git://github.com/AFNetworking/AFNetworking.git
+[submodule "libs/MagicalRecord"]
+	path = libs/MagicalRecord
+	url = git://github.com/magicalpanda/MagicalRecord.git
+[submodule "libs/RegexKitLite"]
+	path = libs/RegexKitLite
+	url = git://github.com/wezm/RegexKitLite.git
