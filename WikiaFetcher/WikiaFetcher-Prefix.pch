@@ -4,4 +4,10 @@
 
 #ifdef __OBJC__
     #import <Cocoa/Cocoa.h>
+    #import <AppKit/NSColor.h>
+
+    #import "CoreData+MagicalRecord.h"
+    #import "MagicalRecordShorthand.h"
+    #import "MagicalRecordHelpers.h"
+
 #endif

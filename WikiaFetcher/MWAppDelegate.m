@@ -7,17 +7,26 @@
 //
 
 #import "MWAppDelegate.h"
+#import "MWXMLParser.h"
+#import "AFNetworking.h"
+#import "NSData+Gzip.h"
 
 @implementation MWAppDelegate
 
-@synthesize window = _window;
+@synthesize window = _window,
+        wikiName = _wikiName, 
+        mwParser=_mwParser, 
+        xmlParser=_xmlParser,
+        progress = _progress,
+        currentPage = _currentPage;
 @synthesize persistentStoreCoordinator = __persistentStoreCoordinator;
 @synthesize managedObjectModel = __managedObjectModel;
 @synthesize managedObjectContext = __managedObjectContext;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    // Insert code here to initialize your application
+    self.mwParser =  [[MWXMLParser alloc] init];
+    self.mwParser.delegate = self;
 }
 
 /**
@@ -27,6 +36,8 @@
 
     NSFileManager *fileManager = [NSFileManager defaultManager];
     NSURL *libraryURL = [[fileManager URLsForDirectory:NSLibraryDirectory inDomains:NSUserDomainMask] lastObject];
+    
+    NSLog(@"%@", libraryURL);
     return [libraryURL URLByAppendingPathComponent:@"WikiaFetcher"];
 }
 
@@ -133,6 +144,7 @@
     Performs the save action for the application, which is to send the save: message to the application's managed object context. Any encountered errors are presented to the user.
  */
 - (IBAction)saveAction:(id)sender {
+    
     NSError *error = nil;
     
     if (![[self managedObjectContext] commitEditing]) {
@@ -188,6 +200,53 @@
     }
 
     return NSTerminateNow;
+}
+
+
+- (IBAction)fetchAction:(id)sender{
+    NSString *wikiName = [self.wikiName stringValue];
+    NSURL *urlDump = [NSURL URLWithString:[NSString stringWithFormat:@"http://wikistats.wikia.com/%@/%@/%@/pages_current.xml.gz", [wikiName substringToIndex:1], [wikiName substringToIndex:2], wikiName]];
+    NSLog(@"%@", urlDump);
+    
+    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:urlDump]];
+                                                                                                     
+                                                                                                     
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseObject) {
+//        [MagicalRecordHelpers setupCoreDataStackWithAutoMigratingSqliteStoreNamed :[NSURL fileURLWithPath: @"/Users/darvin/some.sqlite"]];
+        NSData *resultData = [((NSData*)responseObject) decompressGZip];
+        
+        self.xmlParser = [[NSXMLParser alloc] initWithData:resultData];
+        self.xmlParser.delegate = self.mwParser;
+        [self.xmlParser parse];
+        [self.progress startAnimation:self];
+        
+//        
+//        NSError *error = nil;    
+//        if (![[NSManagedObjectContext MR_defaultContext]  save:&error]) {
+//            NSLog(@"Error while saving %@", ([error localizedDescription] != nil) ? [error localizedDescription] : @"Unknown Error");
+//            exit(1);
+//        }
+//        
+//        [MagicalRecordHelpers cleanUp];
+        
+    }
+   failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+       NSLog(@"Cannot fetch %@", [[operation request] URL]);
+       
+       
+   } ];
+    
+    [queue addOperation:operation];
+}
+
+-(void) parserDidEndDocument:(MWXMLParser *)parser  {
+    [self.progress stopAnimation:self];
+}
+
+-(void) parser:(MWXMLParser *)parser pageProcessingStarted:(NSString *)pageTitle {
+    [self.currentPage setStringValue:pageTitle];
 }
 
 @end
