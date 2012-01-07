@@ -7,6 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Wiki.h"
+#import "MWFileDownloader.h"
+
 
 @class MWXMLParser;
 
@@ -20,9 +23,14 @@
 @interface MWXMLParser : NSObject <NSXMLParserDelegate>
 {
     NSDateFormatter *dateFormatter;
+    Wiki* wiki;
+    MWFileDownloader * downloader;
 }
 @property (retain) NSMutableString* currentString;
 @property (retain) NSMutableDictionary* currentPage;
 @property (retain) NSString* currentElement;
 @property (assign) NSObject<MWXMLParserDelegate>* delegate;
+
+
+- (id) initWithWiki:(Wiki*) aWiki;
 @end

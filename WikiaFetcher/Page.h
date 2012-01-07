@@ -25,6 +25,8 @@
 @property (nonatomic, retain) Namespace *namespace;
 @property (nonatomic, retain) NSSet *files;
 @property (nonatomic, retain) NSManagedObject *contributor;
+@property (nonatomic, retain) NSManagedObject *wiki;
+
 @end
 
 @interface Page (CoreDataGeneratedAccessors)

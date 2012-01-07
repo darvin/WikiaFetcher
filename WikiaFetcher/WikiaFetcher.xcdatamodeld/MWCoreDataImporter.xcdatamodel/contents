@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="872" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="878" systemVersion="11C74" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Category" representedClassName="Category" parentEntity="Page" syncable="YES">
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="categories" inverseEntity="Page" syncable="YES"/>
     </entity>
@@ -7,9 +7,9 @@
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="contributor" inverseEntity="Page" syncable="YES"/>
     </entity>
-    <entity name="File" representedClassName="Image" syncable="YES">
+    <entity name="File" representedClassName="File" syncable="YES">
         <attribute name="name" attributeType="String" indexed="YES" syncable="YES"/>
-        <relationship name="page" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="files" inverseEntity="Page" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="files" inverseEntity="Page" syncable="YES"/>
     </entity>
     <entity name="Namespace" representedClassName="Namespace" syncable="YES">
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
@@ -21,8 +21,14 @@
         <attribute name="title" attributeType="String" indexed="YES" syncable="YES"/>
         <relationship name="categories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Category" inverseName="pages" inverseEntity="Category" syncable="YES"/>
         <relationship name="contributor" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Contibutor" inverseName="pages" inverseEntity="Contibutor" syncable="YES"/>
-        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="page" inverseEntity="File" syncable="YES"/>
+        <relationship name="files" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="File" inverseName="pages" inverseEntity="File" syncable="YES"/>
         <relationship name="namespace" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Namespace" inverseName="pages" inverseEntity="Namespace" syncable="YES"/>
+        <relationship name="wiki" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Wiki" inverseName="pages" inverseEntity="Wiki" syncable="YES"/>
+    </entity>
+    <entity name="Wiki" representedClassName="Wiki" syncable="YES">
+        <attribute name="icon" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="pages" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Page" inverseName="wiki" inverseEntity="Page" syncable="YES"/>
     </entity>
     <elements>
         <element name="Category" positionX="160" positionY="192" width="128" height="60"/>
@@ -30,5 +36,6 @@
         <element name="File" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Namespace" positionX="160" positionY="192" width="128" height="75"/>
         <element name="Page" positionX="160" positionY="192" width="128" height="150"/>
+        <element name="Wiki" positionX="160" positionY="192" width="128" height="90"/>
     </elements>
 </model>

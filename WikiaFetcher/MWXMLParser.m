@@ -12,6 +12,7 @@
 #import "Contibutor.h"
 #import "File.h"
 #import "Category.h"
+#import "MWFileDownloader.h"
 
 @implementation MWXMLParser
 @synthesize currentString, currentPage, currentElement, delegate=_delegate;
@@ -38,6 +39,8 @@
         newPage.title = title;
     }
     
+    newPage.wiki = wiki;
+    
     newPage.text = [self.currentPage objectForKey:@"text"];
     
     Contibutor *contributor = [Contibutor MR_findFirstByAttribute:@"name" withValue:[self.currentPage objectForKey:@"username"]];
@@ -57,15 +60,22 @@
     }
     
     newPage.revisionDate = [dateFormatter dateFromString: [self.currentPage objectForKey:@"timestamp"]];
+    
+    for (File* file in newPage.files) {
+        [downloader addFile: file];
+    }
+    
 //    NSLog(@"%@ , %@     %@", newPage.revisionDate, [self.currentPage objectForKey:@"timestamp"],[dateFormatter stringFromDate: [NSDate dateWithTimeIntervalSinceNow:0]]);
     
     
 }
 
-- (id) init {	
+- (id) initWithWiki:(Wiki*) aWiki {	
 	if (self=[super init]){
         self.currentString = [[NSMutableString alloc] init ];
-        dateFormatter = [[NSDateFormatter alloc] init];   
+        wiki = aWiki;
+        dateFormatter = [[NSDateFormatter alloc] init]; 
+        downloader = [[MWFileDownloader alloc] init];
         [dateFormatter setDateFormat:@"yyyy-MM-dd'T'HH:mm:ss'Z'"];
     }
 	return self;

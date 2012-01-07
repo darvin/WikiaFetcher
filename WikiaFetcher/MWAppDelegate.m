@@ -25,8 +25,7 @@
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-    self.mwParser =  [[MWXMLParser alloc] init];
-    self.mwParser.delegate = self;
+
 }
 
 /**
@@ -204,11 +203,25 @@
 
 
 - (IBAction)fetchAction:(id)sender{
-    NSString *wikiName = [self.wikiName stringValue];
+    [self.progress startAnimation:self];
+
+    [NSManagedObjectContext MR_setDefaultContext:self.managedObjectContext];
+    
+    Wiki* wiki = [Wiki MR_findFirstByAttribute:@"name" withValue:[self.wikiName stringValue]];
+    if (!wiki) {
+        wiki = [Wiki MR_createEntity];
+        wiki.name = [self.wikiName stringValue];
+    }
+    
+    self.mwParser =  [[MWXMLParser alloc] initWithWiki:wiki];
+    self.mwParser.delegate = self;
+    
+    NSString *wikiName = [[[self.wikiName stringValue] componentsSeparatedByCharactersInSet:[[NSCharacterSet alphanumericCharacterSet] invertedSet]] componentsJoinedByString:@""];
+;
     NSURL *urlDump = [NSURL URLWithString:[NSString stringWithFormat:@"http://wikistats.wikia.com/%@/%@/%@/pages_current.xml.gz", [wikiName substringToIndex:1], [wikiName substringToIndex:2], wikiName]];
     NSLog(@"%@", urlDump);
     
-    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+//    NSOperationQueue *queue = [[NSOperationQueue alloc] init];
     
     AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:[NSURLRequest requestWithURL:urlDump]];
                                                                                                      
@@ -220,7 +233,6 @@
         self.xmlParser = [[NSXMLParser alloc] initWithData:resultData];
         self.xmlParser.delegate = self.mwParser;
         [self.xmlParser parse];
-        [self.progress startAnimation:self];
         
 //        
 //        NSError *error = nil;    
@@ -238,7 +250,7 @@
        
    } ];
     
-    [queue addOperation:operation];
+    [[NSOperationQueue mainQueue] addOperation:operation];
 }
 
 -(void) parserDidEndDocument:(MWXMLParser *)parser  {
@@ -246,7 +258,8 @@
 }
 
 -(void) parser:(MWXMLParser *)parser pageProcessingStarted:(NSString *)pageTitle {
-    [self.currentPage setStringValue:pageTitle];
+    [self.currentPage setStringValue: [NSString stringWithFormat: NSLocalizedString(@"Now processing page: %@", nil), pageTitle ]];
+    [self.currentPage display];
 }
 
 @end

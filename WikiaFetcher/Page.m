@@ -20,6 +20,7 @@
 @dynamic namespace;
 @dynamic files;
 @dynamic contributor;
+@dynamic wiki;
 
 - (id) initWithEntity:(NSEntityDescription *)entity insertIntoManagedObjectContext:(NSManagedObjectContext *)context {
     if (self=[super initWithEntity:entity insertIntoManagedObjectContext:context]) {
